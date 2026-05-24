@@ -5,3 +5,8 @@ function toggleSong(element) {
     song.classList.toggle("active");
 
 }
+function goBack() {
+
+    window.history.back();
+
+}
