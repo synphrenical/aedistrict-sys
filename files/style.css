@@ -1,74 +1,136 @@
 body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f6f8fa;
-            padding: 20px;
-            margin: 0;
-        }
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f6f8fa;
+    padding: 20px;
+    margin: 0;
+}
 
-        .directory-container {
-            background-color: white;
-            border: 1px solid #d0d7de;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            padding: 0;
-            overflow: hidden;
-        }
+.directory-container {
+    background-color: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    padding: 0;
+    overflow: hidden;
+}
 
-        .directory-header {
-            background-color: #f6f8fa;
-            border-bottom: 1px solid #d0d7de;
-            padding: 12px 16px;
-            font-weight: 600;
-            color: #24292f;
-        }
+.directory-header {
+    background-color: #f6f8fa;
+    border-bottom: 1px solid #d0d7de;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #24292f;
+}
 
-        .directory-tree {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.directory-tree {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .directory-item {
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-            padding: 0;
-        }
+.directory-item {
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
 
-        .directory-item:last-child {
-            border-bottom: none;
-        }
+.directory-item:last-child {
+    border-bottom: none;
+}
 
-        .tree-line {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding: 10px 16px;
-            text-decoration: none;
-            color: #0969da;
-            transition: background-color 0.15s ease-in-out;
-        }
+/* Expandable items */
+.directory-item.expandable {
+    flex-direction: column;
+    align-items: stretch;
+}
 
-        .tree-line:hover {
-            background-color: #f0f6fc;
-        }
+.tree-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #0969da;
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;
+}
 
-        .tree-icon {
-            margin-right: 8px;
-            font-size: 16px;
-            width: 20px;
-            display: inline-block;
-            text-align: center;
-        }
+.tree-line:hover {
+    background-color: #f0f6fc;
+}
 
-        .tree-name {
-            flex: 1;
-            word-break: break-word;
-        }
+.tree-icon {
+    margin-right: 8px;
+    font-size: 16px;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+}
 
-        .tree-arrow {
-            display: inline-block;
-            margin-right: 4px;
-            color: #57606a;
-        }
+.tree-name {
+    flex: 1;
+    word-break: break-word;
+}
+
+.tree-arrow {
+    display: inline-block;
+    margin-right: 4px;
+    color: #57606a;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tree-arrow.expanded {
+    transform: rotate(90deg);
+}
+
+/* Nested items */
+.nested-tree {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fafbfc;
+    border-top: 1px solid #e5e7eb;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.nested-tree.expanded {
+    max-height: 1000px;
+}
+
+.nested-item {
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.nested-item:last-child {
+    border-bottom: none;
+}
+
+.nested-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 16px 8px 40px;
+    text-decoration: none;
+    color: #0969da;
+    transition: background-color 0.15s ease-in-out;
+    font-size: 14px;
+}
+
+.nested-line:hover {
+    background-color: #f0f4f8;
+}
+
+.nested-icon {
+    margin-right: 6px;
+    font-size: 14px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+}
