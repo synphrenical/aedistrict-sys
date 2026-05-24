@@ -64,9 +64,7 @@ z-index: 2;
 
 border: 1px solid var(--border);
 
-background: rgba(10, 12, 20, 0.94);
-
-backdrop-filter: blur(4px);
+background: #0c0f18ee;
 
 padding: 1rem;
 
