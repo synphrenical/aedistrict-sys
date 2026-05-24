@@ -8,45 +8,106 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="directory-container">
-        <div class="directory-header">📁 files/</div>
-        <ul class="directory-tree">
-            <li class="directory-item">
-                <a href="/files/mire/" class="tree-line">
-                    <span class="tree-icon">📁</span>
-                    <span class="tree-name">mire.frx/</span>
-                </a>
-            </li>
-            <li class="directory-item">
-                <a href="/files/droog/" class="tree-line">
-                    <span class="tree-icon">📁</span>
-                    <span class="tree-name">droog.frx/</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- Subnets (collapsible) -->
-    <li class="directory-item expandable">
-        <a href="/files/caine/" class="tree-line">
-            <span class="tree-arrow">▶</span>
-            <span class="tree-icon">📁</span>
-            <span class="tree-name">caine.subnet</span>
-        </a>
-        <ul class="nested-tree">...</ul>
-    </li>
+    <div class="main-layout">
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            <!-- Main files directory -->
+            <div class="directory-container">
+                <div class="directory-header">📁 files/</div>
+                <ul class="directory-tree">
+                    <li class="directory-item">
+                        <a href="/files/mire/" class="tree-line">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">mire.frx/</span>
+                        </a>
+                    </li>
+                    <li class="directory-item">
+                        <a href="/files/droog/" class="tree-line">
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">droog.frx/</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-    <!-- Sidenets (always expanded, no header link) -->
-    <div class="sidenet-container">
-        <h3>SIDENETS</h3>
-        <ul class="directory-tree">
-            <li class="directory-item expandable">
-                <span class="tree-line" style="cursor: default;">
-                    <span class="tree-icon">🔗</span>
-                    <span class="tree-name">Network Name</span>
-                </span>
-                <ul class="nested-tree expanded">...</ul>
-            </li>
-        </ul>
+            <!-- Subnets (collapsible) -->
+            <div class="directory-container">
+                <div class="directory-header">📋 Subnets</div>
+                <ul class="directory-tree">
+                    <li class="directory-item expandable">
+                        <a href="/files/caine/" class="tree-line">
+                            <span class="tree-arrow">▶</span>
+                            <span class="tree-icon">📁</span>
+                            <span class="tree-name">caine.subnet</span>
+                        </a>
+                        <ul class="nested-tree">
+                            <li class="nested-item">
+                                <a href="/files/caine/abel" class="nested-line">
+                                    <span class="nested-icon">📄</span>
+                                    <span>abel</span>
+                                </a>
+                            </li>
+                            <li class="nested-item">
+                                <a href="/files/caine/AR" class="nested-line">
+                                    <span class="nested-icon">📄</span>
+                                    <span>AR</span>
+                                </a>
+                            </li>
+                            <li class="nested-item">
+                                <a href="/files/caine/rubicon" class="nested-line">
+                                    <span class="nested-icon">📄</span>
+                                    <span>rubicon</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            <!-- Sidenets (always expanded, non-closable) -->
+            <div class="sidenet-container">
+                <h3>🔗 SIDENETS</h3>
+                <ul class="directory-tree">
+                    <li class="directory-item expandable">
+                        <span class="tree-line" style="cursor: default;">
+                            <span class="tree-icon">🌐</span>
+                            <span class="tree-name">Network 1</span>
+                        </span>
+                        <ul class="nested-tree expanded">
+                            <li class="nested-item">
+                                <a href="/sidenet/network1/item1" class="nested-line">
+                                    <span class="nested-icon">📌</span>
+                                    <span>Item 1</span>
+                                </a>
+                            </li>
+                            <li class="nested-item">
+                                <a href="/sidenet/network1/item2" class="nested-line">
+                                    <span class="nested-icon">📌</span>
+                                    <span>Item 2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="directory-item expandable">
+                        <span class="tree-line" style="cursor: default;">
+                            <span class="tree-icon">🌐</span>
+                            <span class="tree-name">Network 2</span>
+                        </span>
+                        <ul class="nested-tree expanded">
+                            <li class="nested-item">
+                                <a href="/sidenet/network2/item1" class="nested-line">
+                                    <span class="nested-icon">📌</span>
+                                    <span>Item 1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
