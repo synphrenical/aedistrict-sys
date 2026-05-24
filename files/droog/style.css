@@ -184,3 +184,25 @@ audio {
 
     color: #e4b3b3;
 }
+.back-button {
+    margin-top: 3rem;
+
+    background: transparent;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    padding: 1rem 1.5rem;
+
+    font-family: Consolas, monospace;
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+.back-button:hover {
+    background: var(--text);
+    color: black;
+}
