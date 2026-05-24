@@ -1,130 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Directory</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AE DISTRICT — FILE INDEX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-image"></div>
-    <div class="main-layout">
-        <!-- LEFT COLUMN -->
-        <div class="left-column">
-            <!-- Main files directory -->
-            <div class="directory-container">
-                <div class="directory-header">📁 files/</div>
-                <ul class="directory-tree">
-                    <li class="directory-item">
-                        <a href="/aedistrict-sys/files/droog/" class="tree-line">
-                            <span class="tree-icon">📌</span>
-                            <span class="tree-name">droog.frx/</span>
-                        </a>
-                    </li>
-                    <li class="directory-item">
-                        <a href="/aedistrict-sys/files/beck/" class="tree-line">
-                            <span class="tree-icon">📌</span>
-                            <span class="tree-name">beck.frx/</span>
-                        </a>
-                    </li>
-                    <li class="directory-item">
-                        <a href="/aedistrict-sys/files/synph/" class="tree-line">
-                            <span class="tree-icon">📁</span>
-                            <span class="tree-name">synph.frx/</span>
-                        </a>
-                    </li>
-                    <li class="directory-item">
-                        <a href="/aedistrict-sys/files/mire/" class="tree-line">
-                            <span class="tree-icon">📁</span>
-                            <span class="tree-name">mire.frx/</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
 
-            <!-- Subnets (collapsible) -->
-            <div class="directory-container">
-                <div class="directory-header">📋 Subnets</div>
-                <ul class="directory-tree">
-                    <li class="directory-item expandable">
-                        <div style="display: flex; align-items: center; width: 100%;">
-                            <button class="tree-arrow-btn" title="Toggle expand">
-                                <span class="tree-arrow">▶</span>
-                            </button>
-                            <a href="/aedistrict-sys/files/caine/" class="tree-line" style="flex: 1; padding-left: 0; margin-left: 4px;">
-                                <span class="tree-icon">📁</span>
-                                <span class="tree-name">caine.subnet</span>
-                            </a>
-                        </div>
-                        <ul class="nested-tree">
-                            <li class="nested-item">
-                                <a href="/aedistrict-sys/files/caine/abel" class="nested-line">
-                                    <span class="nested-icon">📄</span>
-                                    <span>abel</span>
-                                </a>
-                            </li>
-                            <li class="nested-item">
-                                <a href="/aedistrict-sys/files/caine/AR" class="nested-line">
-                                    <span class="nested-icon">📄</span>
-                                    <span>AR</span>
-                                </a>
-                            </li>
-                            <li class="nested-item">
-                                <a href="/aedistrict-sys/files/caine/rubicon" class="nested-line">
-                                    <span class="nested-icon">📄</span>
-                                    <span>rubicon</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <div class="noise"></div>
+  <div class="bg-image"></div>
+  <div class="scanline-overlay"></div>
 
-        <!-- RIGHT COLUMN -->
-        <div class="right-column">
-            <!-- Sidenets (always expanded, non-closable) -->
-            <div class="sidenet-container">
-                <h3>🔗 SIDENETS</h3>
-                <ul class="directory-tree">
-                    <li class="directory-item expandable">
-                        <span class="tree-line" style="cursor: default;">
-                            <span class="tree-icon">🌐</span>
-                            <span class="tree-name">Network 1</span>
-                        </span>
-                        <ul class="nested-tree expanded">
-                            <li class="nested-item">
-                                <a href="/aedistrict-sys/sidenet/network1/item1" class="nested-line">
-                                    <span class="nested-icon">📌</span>
-                                    <span>Item 1</span>
-                                </a>
-                            </li>
-                            <li class="nested-item">
-                                <a href="/aedistrict-sys/sidenet/network1/item2" class="nested-line">
-                                    <span class="nested-icon">📌</span>
-                                    <span>Item 2</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="directory-item expandable">
-                        <span class="tree-line" style="cursor: default;">
-                            <span class="tree-icon">🌐</span>
-                            <span class="tree-name">Network 2</span>
-                        </span>
-                        <ul class="nested-tree expanded">
-                            <li class="nested-item">
-                                <a href="/aedistrict-sys/sidenet/network2/item1" class="nested-line">
-                                    <span class="nested-icon">📌</span>
-                                    <span>Item 1</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="header-left">
+      <span class="breadcrumb active">ROOT://FILES/</span>
     </div>
+    <div class="header-right">
+      <span class="access-badge">ACCESS LEVEL : INTERNAL</span>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <div class="page-title-row">
+      <h1 class="page-title">FILE INDEX</h1>
+      <p class="page-subtitle">AE DISTRICT — INTERNAL CONSTRUCT REGISTRY</p>
+    </div>
+
+    <div class="main-layout">
+
+      <!-- LEFT -->
+      <div class="left-col">
+
+        <!-- Files -->
+        <div class="dir-block">
+          <div class="dir-block-header">
+            <span class="dir-block-icon">▸</span>
+            <span>files/</span>
+          </div>
+
+          <ul class="file-list">
+
+            <li class="file-entry pinned">
+              <a href="/aedistrict-sys/files/droog/" class="file-link">
+                <div class="file-left">
+                  <span class="file-pin">◈</span>
+                  <div class="file-meta">
+                    <span class="file-name">DROOG.FRX</span>
+                    <span class="file-sub">droog.frx/</span>
+                  </div>
+                </div>
+                <span class="file-arrow">→</span>
+              </a>
+            </li>
+
+            <li class="file-entry pinned">
+              <a href="/aedistrict-sys/files/beck/" class="file-link">
+                <div class="file-left">
+                  <span class="file-pin">◈</span>
+                  <div class="file-meta">
+                    <span class="file-name">BECK.FRX</span>
+                    <span class="file-sub">beck.frx/</span>
+                  </div>
+                </div>
+                <span class="file-arrow">→</span>
+              </a>
+            </li>
+
+            <li class="file-entry">
+              <a href="/aedistrict-sys/files/synph/" class="file-link">
+                <div class="file-left">
+                  <span class="file-pin">◇</span>
+                  <div class="file-meta">
+                    <span class="file-name">SYNPH.FRX</span>
+                    <span class="file-sub">synph.frx/</span>
+                  </div>
+                </div>
+                <span class="file-arrow">→</span>
+              </a>
+            </li>
+
+            <li class="file-entry">
+              <a href="/aedistrict-sys/files/mire/" class="file-link">
+                <div class="file-left">
+                  <span class="file-pin">◇</span>
+                  <div class="file-meta">
+                    <span class="file-name">MIRE.FRX</span>
+                    <span class="file-sub">mire.frx/</span>
+                  </div>
+                </div>
+                <span class="file-arrow">→</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Subnets -->
+        <div class="dir-block">
+          <div class="dir-block-header">
+            <span class="dir-block-icon">▸</span>
+            <span>subnets/</span>
+          </div>
+
+          <ul class="file-list">
+
+            <li class="file-entry expandable" id="subnet-caine">
+              <div class="file-link subnet-toggle" onclick="toggleSubnet('subnet-caine')">
+                <div class="file-left">
+                  <span class="file-pin expand-icon">▸</span>
+                  <div class="file-meta">
+                    <span class="file-name">CAINE.SUBNET</span>
+                    <span class="file-sub">caine.subnet/</span>
+                  </div>
+                </div>
+                <span class="file-count">3 entries</span>
+              </div>
+              <ul class="nested-list">
+                <li class="nested-entry">
+                  <a href="/aedistrict-sys/files/caine/abel" class="nested-link">
+                    <span class="nested-icon">—</span>
+                    <span>abel</span>
+                  </a>
+                </li>
+                <li class="nested-entry">
+                  <a href="/aedistrict-sys/files/caine/AR" class="nested-link">
+                    <span class="nested-icon">—</span>
+                    <span>AR</span>
+                  </a>
+                </li>
+                <li class="nested-entry">
+                  <a href="/aedistrict-sys/files/caine/rubicon" class="nested-link">
+                    <span class="nested-icon">—</span>
+                    <span>rubicon</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right-col">
+
+        <div class="dir-block sidenets-block">
+          <div class="dir-block-header">
+            <span class="dir-block-icon">⬡</span>
+            <span>sidenets/</span>
+          </div>
+
+          <div class="sidenet-group">
+            <div class="sidenet-label">Network 1</div>
+            <ul class="sidenet-list">
+              <li class="sidenet-entry">
+                <a href="/aedistrict-sys/sidenet/network1/item1" class="sidenet-link">
+                  <span class="sidenet-dot">◈</span>
+                  <span>Item 1</span>
+                </a>
+              </li>
+              <li class="sidenet-entry">
+                <a href="/aedistrict-sys/sidenet/network1/item2" class="sidenet-link">
+                  <span class="sidenet-dot">◈</span>
+                  <span>Item 2</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidenet-group">
+            <div class="sidenet-label">Network 2</div>
+            <ul class="sidenet-list">
+              <li class="sidenet-entry">
+                <a href="/aedistrict-sys/sidenet/network2/item1" class="sidenet-link">
+                  <span class="sidenet-dot">◈</span>
+                  <span>Item 1</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    function toggleSubnet(id) {
+      const item = document.getElementById(id);
+      if (!item) return;
+      const isOpen = item.classList.toggle('open');
+      const icon = item.querySelector('.expand-icon');
+      if (icon) icon.style.transform = isOpen ? 'rotate(90deg)' : '';
+    }
+  </script>
+
 </body>
 </html>
