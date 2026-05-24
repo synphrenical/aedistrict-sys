@@ -206,3 +206,48 @@ audio {
     background: var(--text);
     color: black;
 }
+
+.diagnostic-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem;
+
+    margin-top: 2rem;
+}
+
+.diag-column {
+    border: 1px solid var(--border);
+
+    padding: 1.5rem;
+
+    background: rgba(255,255,255,0.01);
+}
+
+.diag-column h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    color: var(--accent);
+
+    letter-spacing: 0.1rem;
+}
+
+.diag-item {
+    margin-bottom: 1.25rem;
+}
+
+.diag-label {
+    color: var(--soft);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 0.35rem;
+
+    text-transform: uppercase;
+}
+
+.diag-value {
+    line-height: 1.5;
+}
