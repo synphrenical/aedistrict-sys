@@ -1,13 +1,103 @@
-<ul class="directory">
-    <li>
-        <a href="/files/mire/">
-            mire.frx/
-        </a>
-    </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Directory</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f6f8fa;
+            padding: 20px;
+            margin: 0;
+        }
 
-    <li>
-        <a href="/files/droog/">
-            droog.frx/
-        </a>
-    </li>
-</ul>
+        .directory-container {
+            background-color: white;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .directory-header {
+            background-color: #f6f8fa;
+            border-bottom: 1px solid #d0d7de;
+            padding: 12px 16px;
+            font-weight: 600;
+            color: #24292f;
+        }
+
+        .directory-tree {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .directory-item {
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .directory-item:last-child {
+            border-bottom: none;
+        }
+
+        .tree-line {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: #0969da;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        .tree-line:hover {
+            background-color: #f0f6fc;
+        }
+
+        .tree-icon {
+            margin-right: 8px;
+            font-size: 16px;
+            width: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .tree-name {
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .tree-arrow {
+            display: inline-block;
+            margin-right: 4px;
+            color: #57606a;
+        }
+    </style>
+</head>
+<body>
+    <div class="directory-container">
+        <div class="directory-header">📁 files/</div>
+        <ul class="directory-tree">
+            <li class="directory-item">
+                <a href="/files/mire/" class="tree-line">
+                    <span class="tree-icon">📁</span>
+                    <span class="tree-name">mire.frx/</span>
+                </a>
+            </li>
+            <li class="directory-item">
+                <a href="/files/droog/" class="tree-line">
+                    <span class="tree-icon">📁</span>
+                    <span class="tree-name">droog.frx/</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
