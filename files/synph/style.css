@@ -195,9 +195,12 @@ line-height: 1.6;
 .bottom-grid {
 
 display: grid;
+
 grid-template-columns: 1fr 350px 420px;
 
 gap: 1rem;
+
+align-items: start;
 
 }
 
@@ -205,11 +208,10 @@ gap: 1rem;
 .interests-section,
 .playlist-section {
 
-border: 1px solid var(--border);
-
-padding: 1.5rem;
-
-background: rgba(255,255,255,0.01);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.01);
+  height: fit-content;
 
 }
 
