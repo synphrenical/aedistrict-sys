@@ -1,10 +1,6 @@
 function toggleExpand(event) {
-    // Prevent navigation when clicking expand button
-    if (event.target.closest('.tree-arrow')) {
-        event.preventDefault();
-    }
-
-    const listItem = event.currentTarget.closest('.directory-item.expandable');
+    const btn = event.currentTarget;
+    const listItem = btn.closest('.directory-item.expandable');
     if (!listItem) return;
 
     const arrow = listItem.querySelector('.tree-arrow');
@@ -21,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const expandableItems = document.querySelectorAll('.directory-item.expandable');
     
     expandableItems.forEach(item => {
-        const link = item.querySelector('.tree-line');
-        if (link) {
-            link.addEventListener('click', toggleExpand);
+        const btn = item.querySelector('.tree-arrow-btn');
+        if (btn) {
+            btn.addEventListener('click', toggleExpand);
         }
     });
 
@@ -38,10 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Disable toggle for sidenet items
         const sidenetItems = container.querySelectorAll('.directory-item.expandable');
         sidenetItems.forEach(item => {
-            const link = item.querySelector('.tree-line');
-            if (link) {
-                link.removeEventListener('click', toggleExpand);
-                link.style.cursor = 'default';
+            const btn = item.querySelector('.tree-arrow-btn');
+            if (btn) {
+                btn.removeEventListener('click', toggleExpand);
+                btn.style.visibility = 'hidden';
+                btn.style.width = '0';
             }
             const arrow = item.querySelector('.tree-arrow');
             if (arrow) {
