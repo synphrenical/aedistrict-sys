@@ -65,7 +65,7 @@
     <section class="identity-strip">
       <div class="id-item">
         <span class="id-label">Species</span>
-        <span class="id-value">Carapacian / "Bug"</span>
+        <span class="id-value">Orchid Mantis Variant</span>
       </div>
       <div class="id-item">
         <span class="id-label">File Type</span>
@@ -290,7 +290,81 @@
       <button class="back-btn" onclick="history.back()">← Return to Directory</button>
     </div>
 
+  </main>
+
+  <!-- HIDDEN MENU (unlocked via password on directory page) -->
+  <div class="hidden-menu" id="hidden-menu">
+    <h3 class="hidden-menu-title">EXTRA DATA</h3>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Additional Notes</div>
+      <div class="hidden-menu-content">
+        Droog operates in isolated pockets of the system. Communication is limited, but consistent.
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Archive Sectors</div>
+      <div class="hidden-menu-content">
+        <strong>Primary:</strong> Memory indexing, emotional records<br>
+        <strong>Secondary:</strong> Interpersonal data, inactive processes<br>
+        <strong>Tertiary:</strong> Fragmented histories
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Observed Behaviors</div>
+      <div class="hidden-menu-content">
+        Autonomous restructuring without authorization. Compulsive preservation. Territorial responses.
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">System Integration</div>
+      <div class="hidden-menu-content">
+        Functions best in low-stimulation, isolated settings. Prefers asynchronous interaction.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle button for hidden menu -->
+  <button class="hidden-menu-toggle" id="menu-toggle" onclick="toggleHiddenMenu()">◀</button>
+
+  <script src="unlock-system.js"></script>
   <script>
+    // Check localStorage on page load
+    function initializeHiddenMenu() {
+      const isUnlocked = localStorage.getItem('droog_unlocked') === 'true';
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('hidden-menu');
+
+      if (isUnlocked && menuToggle && menu) {
+        menuToggle.classList.add('visible');
+      }
+    }
+
+    // Toggle menu open/closed
+    function toggleHiddenMenu() {
+      const menu = document.getElementById('hidden-menu');
+      const toggle = document.getElementById('menu-toggle');
+      
+      if (menu && toggle) {
+        menu.classList.toggle('visible');
+        toggle.classList.toggle('open');
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initializeHiddenMenu);
+
+    // Also check when page becomes visible (tab switching)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        initializeHiddenMenu();
+      }
+    });
+
+    // Toggle song
     function toggleSong(el) {
       const wasActive = el.classList.contains('active');
       document.querySelectorAll('.song-item').forEach(s => s.classList.remove('active'));
