@@ -66,7 +66,7 @@
     <section class="identity-strip">
       <div class="id-item">
         <span class="id-label">Species</span>
-        <span class="id-value">Humanoid / Robloxian</span>
+        <span class="id-value">Humanoid Canine Variant</span>
       </div>
       <div class="id-item">
         <span class="id-label">File Type</span>
@@ -306,8 +306,98 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <!-- HIDDEN MENU (unlocked via password on directory page) -->
+  <div class="hidden-menu" id="hidden-menu">
+    <button class="hidden-menu-close" onclick="closeHiddenMenu()" aria-label="Close menu">✕</button>
+    <h3 class="hidden-menu-title">EXTRA DATA</h3>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Nightmare Patterns</div>
+      <div class="hidden-menu-content">
+        Recurring themes of pursuit, confinement, loss of control. Triggers include loud environmental stimuli, sudden physical contact, abandonment scenarios.
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Recovery Protocols</div>
+      <div class="hidden-menu-content">
+        <strong>Immediate:</strong> Quiet spaces, low stimulation, passive presence<br>
+        <strong>Active:</strong> Verbal reassurance, environmental control restoration<br>
+        <strong>Post-Stabilization:</strong> Observational reentry, gradual reengagement
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Behavioral Triggers</div>
+      <div class="hidden-menu-content">
+        Unexpected physical contact. Rapid environmental changes. Unpredictable external input. Forced social interaction.
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Optimal Conditions</div>
+      <div class="hidden-menu-content">
+        Consistent scheduling. Predictable environments. Clear communication. Respectable interpersonal distance. Low sensory input.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle button for hidden menu -->
+  <button class="hidden-menu-toggle" id="menu-toggle" onclick="toggleHiddenMenu()" aria-label="Toggle extra data panel">◀</button>
+
+  <script src="unlock-system.js"></script>
   <script>
+    // Check localStorage on page load
+    function initializeHiddenMenu() {
+      const isUnlocked = localStorage.getItem('droog_unlocked') === 'true';
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('hidden-menu');
+
+      if (isUnlocked && menuToggle && menu) {
+        menuToggle.classList.add('visible');
+      }
+    }
+
+    // Toggle menu open/closed
+    function toggleHiddenMenu() {
+      const menu = document.getElementById('hidden-menu');
+      const toggle = document.getElementById('menu-toggle');
+      
+      if (menu && toggle) {
+        menu.classList.toggle('visible');
+        toggle.classList.toggle('open');
+      }
+    }
+
+    // Close menu
+    function closeHiddenMenu() {
+      const menu = document.getElementById('hidden-menu');
+      const toggle = document.getElementById('menu-toggle');
+      
+      if (menu && toggle) {
+        menu.classList.remove('visible');
+        toggle.classList.remove('open');
+      }
+    }
+
+    // ESC key to close menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeHiddenMenu();
+      }
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initializeHiddenMenu);
+
+    // Also check when page becomes visible (tab switching)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        initializeHiddenMenu();
+      }
+    });
+
+    // Toggle song
     function toggleSong(el) {
       const wasActive = el.classList.contains('active');
       document.querySelectorAll('.song-item').forEach(s => s.classList.remove('active'));
