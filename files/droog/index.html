@@ -294,6 +294,7 @@
 
   <!-- HIDDEN MENU (unlocked via password on directory page) -->
   <div class="hidden-menu" id="hidden-menu">
+    <button class="hidden-menu-close" onclick="closeHiddenMenu()" aria-label="Close menu">✕</button>
     <h3 class="hidden-menu-title">EXTRA DATA</h3>
 
     <div class="hidden-menu-section">
@@ -328,7 +329,7 @@
   </div>
 
   <!-- Toggle button for hidden menu -->
-  <button class="hidden-menu-toggle" id="menu-toggle" onclick="toggleHiddenMenu()">◀</button>
+  <button class="hidden-menu-toggle" id="menu-toggle" onclick="toggleHiddenMenu()" aria-label="Toggle extra data panel">◀</button>
 
   <script src="unlock-system.js"></script>
   <script>
@@ -353,6 +354,24 @@
         toggle.classList.toggle('open');
       }
     }
+
+    // Close menu
+    function closeHiddenMenu() {
+      const menu = document.getElementById('hidden-menu');
+      const toggle = document.getElementById('menu-toggle');
+      
+      if (menu && toggle) {
+        menu.classList.remove('visible');
+        toggle.classList.remove('open');
+      }
+    }
+
+    // ESC key to close menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeHiddenMenu();
+      }
+    });
 
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', initializeHiddenMenu);
