@@ -502,3 +502,124 @@ audio { width: 100%; height: 28px; opacity: 0.8; }
   .page-footer { flex-direction: column; align-items: flex-start; }
   .diag-row { grid-template-columns: 1fr; gap: 0.25rem; }
 }
+
+/* ─── HIDDEN MENU (unlocked by password) ────────────────── */
+.hidden-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background: var(--surface);
+  border-left: 1px solid var(--border2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 2.5rem 1.75rem 2rem;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+}
+
+.hidden-menu.visible {
+  transform: translateX(0);
+}
+
+.hidden-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s;
+  display: none;
+}
+
+.hidden-menu.visible .hidden-menu-close {
+  display: block;
+}
+
+.hidden-menu-close:hover {
+  color: var(--accent);
+}
+
+.hidden-menu-toggle {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 64px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent2);
+  border: 1px solid var(--accent2);
+  color: var(--bg);
+  cursor: pointer;
+  z-index: 998;
+  transition: all 0.2s ease;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.hidden-menu-toggle.visible {
+  display: flex;
+}
+
+.hidden-menu-toggle:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(201,168,108,0.3);
+}
+
+.hidden-menu-toggle.open {
+  right: calc(300px + 1.5rem);
+}
+
+.hidden-menu-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0 0 1.75rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border2);
+}
+
+.hidden-menu-section {
+  margin-bottom: 2rem;
+}
+
+.hidden-menu-section:last-child {
+  margin-bottom: 0;
+}
+
+.hidden-menu-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.hidden-menu-content {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #906050;
+}
+
+.hidden-menu-content strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hidden-menu-content br {
+  margin: 0.25rem 0;
+}
