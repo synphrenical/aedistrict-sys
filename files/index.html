@@ -9,56 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
-<script>
-
-let typedBuffer = "";
-
-document.addEventListener("keydown", async (e) => {
-
-if (e.key.length === 1) {
-typedBuffer += e.key.toLowerCase();
-}
-
-if (typedBuffer.length > 40) {
-typedBuffer = typedBuffer.slice(-40);
-}
-
-if (e.key === "Enter") {
-
-if (typedBuffer.includes("question")) {
-
-localStorage.setItem(
-"ae_auth",
-await sha256("question")
-);
-
-console.log("ACCESS GRANTED");
-
-}
-
-typedBuffer = "";
-
-}
-
-});
-
-async function sha256(text) {
-
-const data = new TextEncoder().encode(text);
-
-const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-
-const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-return hashArray.map(b =>
-b.toString(16).padStart(2, "0")
-).join("");
-
-}
-
-</script>
-  
 <body>
 
   <div class="noise"></div>
