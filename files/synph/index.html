@@ -313,13 +313,103 @@
 
   </main>
 
+  <!-- HIDDEN MENU (unlocked via password on directory page) -->
+  <div class="hidden-menu" id="hidden-menu">
+    <button class="hidden-menu-close" onclick="closeHiddenMenu()" aria-label="Close menu">✕</button>
+    <h3 class="hidden-menu-title">EXTRA DATA</h3>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Internal Pressure Points</div>
+      <div class="hidden-menu-content">
+        Abandonment triggers. Authority figures. Forced compliance scenarios. Perception of personal inadequacy.
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Decompression Methods</div>
+      <div class="hidden-menu-content">
+        <strong>Immediate:</strong> Verbal reassurance, presence of trusted individuals<br>
+        <strong>Short-term:</strong> Isolated spaces, passive physical proximity<br>
+        <strong>Long-term:</strong> Therapeutic discussion, system stabilization practices
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">Collapse Warning Signs</div>
+      <div class="hidden-menu-content">
+        Increased dissociation. Withdrawal from all interaction. Compulsive self-harm ideation. Loss of protective function.
+      </div>
+    </div>
+
+    <div class="hidden-menu-section">
+      <div class="hidden-menu-label">System Role Dependencies</div>
+      <div class="hidden-menu-content">
+        Emotional burden directly impacts system stability. Protective function cannot be delegated. Self-neglect accelerates degradation.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle button for hidden menu -->
+  <button class="hidden-menu-toggle" id="menu-toggle" onclick="toggleHiddenMenu()" aria-label="Toggle extra data panel">◀</button>
+
+  <script src="unlock-system.js"></script>
   <script>
+    // Check localStorage on page load
+    function initializeHiddenMenu() {
+      const isUnlocked = localStorage.getItem('droog_unlocked') === 'true';
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('hidden-menu');
+
+      if (isUnlocked && menuToggle && menu) {
+        menuToggle.classList.add('visible');
+      }
+    }
+
+    // Toggle menu open/closed
+    function toggleHiddenMenu() {
+      const menu = document.getElementById('hidden-menu');
+      const toggle = document.getElementById('menu-toggle');
+      
+      if (menu && toggle) {
+        menu.classList.toggle('visible');
+        toggle.classList.toggle('open');
+      }
+    }
+
+    // Close menu
+    function closeHiddenMenu() {
+      const menu = document.getElementById('hidden-menu');
+      const toggle = document.getElementById('menu-toggle');
+      
+      if (menu && toggle) {
+        menu.classList.remove('visible');
+        toggle.classList.remove('open');
+      }
+    }
+
+    // ESC key to close menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeHiddenMenu();
+      }
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initializeHiddenMenu);
+
+    // Also check when page becomes visible (tab switching)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        initializeHiddenMenu();
+      }
+    });
+
+    // Toggle song
     function toggleSong(el) {
       const wasActive = el.classList.contains('active');
       document.querySelectorAll('.song-item').forEach(s => s.classList.remove('active'));
       if (!wasActive) el.classList.add('active');
     }
-    function goBack() { history.back(); }
   </script>
 
 </body>
