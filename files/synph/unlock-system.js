@@ -31,6 +31,9 @@
         const toggle = document.getElementById('menu-toggle');
         if (menu && toggle) {
           toggle.classList.add('visible');
+          // Optional: automatically open the menu when unlocked
+          // menu.classList.add('visible');
+          // toggle.classList.add('open');
         }
       }
     }
