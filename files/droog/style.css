@@ -481,3 +481,73 @@ audio { width: 100%; height: 28px; opacity: 0.8; }
   .page-footer { flex-direction: column; align-items: flex-start; }
   .diag-row { grid-template-columns: 1fr; gap: 0.25rem; }
 }
+
+
+.secret-panel {
+
+position: fixed;
+
+top: 0;
+right: -420px;
+
+width: 420px;
+height: 100vh;
+
+background: #0a0d14;
+
+border-left: 1px solid #23283d;
+
+transition: right 0.3s ease;
+
+z-index: 9999;
+
+display: none;
+
+}
+
+.admin-unlocked .secret-panel {
+
+display: block;
+
+}
+
+.secret-panel.open {
+
+right: 0;
+
+}
+
+.secret-toggle {
+
+position: absolute;
+
+left: -42px;
+top: 50%;
+
+transform: translateY(-50%);
+
+width: 42px;
+height: 90px;
+
+background: #0a0d14;
+
+border: 1px solid #23283d;
+border-right: none;
+
+color: white;
+
+cursor: pointer;
+
+font-size: 1.2rem;
+
+}
+
+.secret-content {
+
+padding: 2rem;
+
+overflow-y: auto;
+
+height: 100%;
+
+}
