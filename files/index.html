@@ -36,68 +36,14 @@
       <!-- LEFT -->
       <div class="left-col">
 
-        <!-- Files -->
+        <!-- Files (auto-populated from registry) -->
         <div class="dir-block">
           <div class="dir-block-header">
             <span class="dir-block-icon">▸</span>
             <span>files/</span>
           </div>
 
-          <ul class="file-list">
-
-            <li class="file-entry pinned">
-              <a href="/aedistrict-sys/files/droog/" class="file-link">
-                <div class="file-left">
-                  <span class="file-pin">◈</span>
-                  <div class="file-meta">
-                    <span class="file-name">DROOG.FRX</span>
-                    <span class="file-sub">droog.frx/</span>
-                  </div>
-                </div>
-                <span class="file-arrow">→</span>
-              </a>
-            </li>
-
-            <li class="file-entry pinned">
-              <a href="/aedistrict-sys/files/beck/" class="file-link">
-                <div class="file-left">
-                  <span class="file-pin">◈</span>
-                  <div class="file-meta">
-                    <span class="file-name">BECK.FRX</span>
-                    <span class="file-sub">beck.frx/</span>
-                  </div>
-                </div>
-                <span class="file-arrow">→</span>
-              </a>
-            </li>
-
-            <li class="file-entry">
-              <a href="/aedistrict-sys/files/synph/" class="file-link">
-                <div class="file-left">
-                  <span class="file-pin">◇</span>
-                  <div class="file-meta">
-                    <span class="file-name">SYNPH.FRX</span>
-                    <span class="file-sub">synph.frx/</span>
-                  </div>
-                </div>
-                <span class="file-arrow">→</span>
-              </a>
-            </li>
-
-            <li class="file-entry">
-              <a href="/aedistrict-sys/files/mire/" class="file-link">
-                <div class="file-left">
-                  <span class="file-pin">◇</span>
-                  <div class="file-meta">
-                    <span class="file-name">MIRE.FRX</span>
-                    <span class="file-sub">mire.frx/</span>
-                  </div>
-                </div>
-                <span class="file-arrow">→</span>
-              </a>
-            </li>
-
-          </ul>
+          <ul class="file-list"></ul>
         </div>
 
         <!-- Subnets -->
@@ -194,6 +140,8 @@
   </main>
 
   <script src="unlock-system.js"></script>
+  <script src="file-registry.js"></script>
+  <script src="populate-files.js"></script>
   <script>
     function toggleSubnet(id) {
       const item = document.getElementById(id);
