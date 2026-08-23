@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AE District</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Profiles</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+
 </head>
+
+
 <body>
 
+    <main class="profile-page">
 
+        <h1>Profiles</h1>
+
+        <p>
+            A collection of profiles.
+        </p>
+
+        <div id="profiles"></div>
+
+    </main>
+
+
+    <script>
+
+        const profiles = [
+
+            "synph",
+            "droog",
+            "sampo"
+
+        ];
+
+
+        const container =
+            document.getElementById("profiles");
+
+
+        profiles.forEach(name => {
+
+            const link =
+                document.createElement("a");
+
+            link.href =
+                `/profile/?id=${name}`;
+
+            link.textContent =
+                name;
+
+            link.style.display =
+                "block";
+
+            container.appendChild(link);
+
+        });
+
+    </script>
 
 </body>
+
 </html>
