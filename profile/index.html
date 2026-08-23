@@ -1,1 +1,147 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Loading profile...</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<body>
+
+    <main class="profile-page">
+
+        <div id="profile-loading" class="profile-state">
+            Loading profile...
+        </div>
+
+        <div id="profile-error" class="profile-state error" hidden>
+            <h1>Profile not found</h1>
+            <p id="error-message">
+                The requested file could not be found.
+            </p>
+
+            <a href="/">Return home</a>
+        </div>
+
+        <article id="profile" class="profile" hidden>
+
+            <header class="profile-header">
+
+                <img
+                    id="profile-icon"
+                    class="profile-icon"
+                    alt=""
+                >
+
+                <div class="profile-heading">
+
+                    <h1 id="profile-name"></h1>
+
+                    <div
+                        id="profile-pronouns"
+                        class="pronouns"
+                    ></div>
+
+                </div>
+
+            </header>
+
+
+            <section
+                id="description-section"
+                class="profile-section"
+                hidden
+            >
+                <p
+                    id="profile-description"
+                    class="description"
+                ></p>
+            </section>
+
+
+            <section
+                id="sources-section"
+                class="profile-section"
+                hidden
+            >
+                <h2>Sources</h2>
+
+                <div
+                    id="profile-sources"
+                    class="source-list"
+                ></div>
+            </section>
+
+
+            <section
+                id="roles-section"
+                class="profile-section"
+                hidden
+            >
+                <h2>Roles</h2>
+
+                <div
+                    id="profile-roles"
+                    class="tag-list"
+                ></div>
+            </section>
+
+
+            <section
+                id="identities-section"
+                class="profile-section"
+                hidden
+            >
+                <h2>Identities</h2>
+
+                <div
+                    id="profile-identities"
+                    class="tag-list"
+                ></div>
+            </section>
+
+
+            <section
+                id="tags-section"
+                class="profile-section"
+                hidden
+            >
+                <h2>Tags</h2>
+
+                <div
+                    id="profile-tags"
+                    class="tag-list"
+                ></div>
+            </section>
+
+
+            <section
+                id="links-section"
+                class="profile-section"
+                hidden
+            >
+                <h2>Links</h2>
+
+                <div
+                    id="profile-links"
+                    class="link-list"
+                ></div>
+            </section>
+
+        </article>
+
+    </main>
+
+    <script src="/js/profile.js"></script>
+
+</body>
+</html>
