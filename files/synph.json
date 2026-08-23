@@ -1,0 +1,50 @@
+{
+  "name": "Synph",
+  "icon": "https://example.com/synph.png",
+
+  "pronouns": [
+    {
+      "display": "he",
+      "full": "he/him/his/himself"
+    },
+    {
+      "display": "it",
+      "full": "it/its"
+    }
+  ],
+
+  "description": "A description of Synph goes here.",
+
+  "sources": [
+    {
+      "name": "Degrees of Lewdity",
+      "url": "https://example.com/source"
+    },
+    {
+      "name": "Original",
+      "url": null
+    }
+  ],
+
+  "roles": [
+    "Internal Administrator",
+    "Archivist"
+  ],
+
+  "identities": [
+    "Agender",
+    "Androgyne"
+  ],
+
+  "tags": [
+    "introject",
+    "fictive"
+  ],
+
+  "links": [
+    {
+      "name": "PluralKit",
+      "url": "https://example.com"
+    }
+  ]
+}
