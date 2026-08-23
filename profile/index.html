@@ -1,7 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,139 +10,323 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Loading profile...</title>
+    <title>Profile</title>
 
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/profile.css">
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/profile.css"
+    >
+
 </head>
+
 
 <body>
 
+    <div id="background-layer"></div>
+
     <main class="profile-page">
 
-        <div id="profile-loading" class="profile-state">
-            Loading profile...
+        <!-- Loading -->
+
+        <div
+            id="profile-loading"
+            class="profile-state"
+        >
+            Loading...
         </div>
 
-        <div id="profile-error" class="profile-state error" hidden>
-            <h1>Profile not found</h1>
+
+        <!-- Error -->
+
+        <div
+            id="profile-error"
+            class="profile-state error"
+            hidden
+        >
+
+            <div class="error-code">
+                404
+            </div>
+
+            <h1>
+                Profile not found
+            </h1>
+
             <p id="error-message">
-                The requested file could not be found.
+                This file does not exist.
             </p>
 
-            <a href="/">Return home</a>
+            <a href="/">
+                Return home
+            </a>
+
         </div>
 
-        <article id="profile" class="profile" hidden>
+
+        <!-- Actual profile -->
+
+        <article
+            id="profile"
+            class="profile"
+            hidden
+        >
+
+
+            <!-- ========================= -->
+            <!-- HEADER -->
+            <!-- ========================= -->
 
             <header class="profile-header">
 
-                <img
-                    id="profile-icon"
-                    class="profile-icon"
-                    alt=""
-                >
+                <div class="header-box">
 
-                <div class="profile-heading">
+                    <div class="icon-frame">
 
-                    <h1 id="profile-name"></h1>
+                        <img
+                            id="profile-icon"
+                            class="profile-icon"
+                            alt=""
+                        >
 
-                    <div
-                        id="profile-pronouns"
-                        class="pronouns"
-                    ></div>
+                    </div>
+
+
+                    <div class="header-information">
+
+                        <h1 id="profile-name">
+                            Profile
+                        </h1>
+
+
+                        <div
+                            id="profile-pronouns"
+                            class="pronouns"
+                        ></div>
+
+
+                        <div
+                            id="profile-status"
+                            class="profile-status"
+                            hidden
+                        ></div>
+
+                    </div>
 
                 </div>
 
             </header>
 
 
+            <!-- ========================= -->
+            <!-- DESCRIPTION -->
+            <!-- ========================= -->
+
             <section
                 id="description-section"
-                class="profile-section"
+                class="description-box"
                 hidden
             >
-                <p
-                    id="profile-description"
-                    class="description"
-                ></p>
+
+                <p id="profile-description"></p>
+
             </section>
 
 
-            <section
-                id="sources-section"
-                class="profile-section"
-                hidden
-            >
-                <h2>Sources</h2>
+            <!-- ========================= -->
+            <!-- MAIN 2 / 1 / 2 GRID -->
+            <!-- ========================= -->
 
+            <div class="profile-grid">
+
+
+                <!-- LEFT -->
                 <div
-                    id="profile-sources"
-                    class="source-list"
-                ></div>
-            </section>
+                    id="left-column"
+                    class="profile-column column-left"
+                >
 
 
-            <section
-                id="roles-section"
-                class="profile-section"
-                hidden
-            >
-                <h2>Roles</h2>
+                    <section
+                        id="identities-section"
+                        class="info-section"
+                        hidden
+                    >
 
+                        <h2>Identities</h2>
+
+                        <div
+                            id="profile-identities"
+                            class="tag-list"
+                        ></div>
+
+                    </section>
+
+
+                    <section
+                        id="roles-section"
+                        class="info-section"
+                        hidden
+                    >
+
+                        <h2>Roles</h2>
+
+                        <div
+                            id="profile-roles"
+                            class="tag-list"
+                        ></div>
+
+                    </section>
+
+
+                    <section
+                        id="terms-section"
+                        class="info-section"
+                        hidden
+                    >
+
+                        <h2>Terms</h2>
+
+                        <div
+                            id="profile-terms"
+                            class="tag-list"
+                        ></div>
+
+                    </section>
+
+
+                    <section
+                        id="aliases-section"
+                        class="info-section"
+                        hidden
+                    >
+
+                        <h2>Also known as</h2>
+
+                        <div
+                            id="profile-aliases"
+                            class="tag-list"
+                        ></div>
+
+                    </section>
+
+
+                </div>
+
+
+                <!-- CENTER -->
                 <div
-                    id="profile-roles"
-                    class="tag-list"
-                ></div>
-            </section>
+                    id="center-column"
+                    class="profile-column column-center"
+                >
 
 
-            <section
-                id="identities-section"
-                class="profile-section"
-                hidden
-            >
-                <h2>Identities</h2>
+                    <section
+                        id="information-section"
+                        class="info-section"
+                        hidden
+                    >
 
+                        <h2>Information</h2>
+
+                        <div
+                            id="profile-information"
+                            class="information-list"
+                        ></div>
+
+                    </section>
+
+
+                    <section
+                        id="flags-section"
+                        class="info-section"
+                        hidden
+                    >
+
+                        <h2>Flags</h2>
+
+                        <div
+                            id="profile-flags"
+                            class="flag-list"
+                        ></div>
+
+                    </section>
+
+
+                </div>
+
+
+                <!-- RIGHT -->
                 <div
-                    id="profile-identities"
-                    class="tag-list"
-                ></div>
-            </section>
+                    id="right-column"
+                    class="profile-column column-right"
+                >
 
 
-            <section
-                id="tags-section"
-                class="profile-section"
-                hidden
-            >
-                <h2>Tags</h2>
+                    <section
+                        id="sources-section"
+                        class="info-section"
+                        hidden
+                    >
 
-                <div
-                    id="profile-tags"
-                    class="tag-list"
-                ></div>
-            </section>
+                        <h2>Sources</h2>
+
+                        <div
+                            id="profile-sources"
+                            class="link-list"
+                        ></div>
+
+                    </section>
 
 
-            <section
-                id="links-section"
-                class="profile-section"
-                hidden
-            >
-                <h2>Links</h2>
+                    <section
+                        id="links-section"
+                        class="info-section"
+                        hidden
+                    >
 
-                <div
-                    id="profile-links"
-                    class="link-list"
-                ></div>
-            </section>
+                        <h2>Links</h2>
+
+                        <div
+                            id="profile-links"
+                            class="link-list"
+                        ></div>
+
+                    </section>
+
+
+                    <section
+                        id="notes-section"
+                        class="info-section"
+                        hidden
+                    >
+
+                        <h2>Notes</h2>
+
+                        <ul
+                            id="profile-notes"
+                            class="notes-list"
+                        ></ul>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+
 
         </article>
 
     </main>
 
+
     <script src="/js/profile.js"></script>
 
 </body>
+
 </html>
