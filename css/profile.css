@@ -1,1 +1,101 @@
+.pronouns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
 
+.pronoun {
+    position: relative;
+
+    display: inline-block;
+
+    cursor: help;
+
+    color: var(--accent);
+    font-weight: 600;
+}
+
+
+/* Tooltip */
+
+.pronoun::after {
+
+    content: attr(data-pronouns);
+
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 10px);
+
+    transform:
+        translateX(-50%)
+        translateY(4px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    background: var(--tooltip-background);
+    color: var(--tooltip-text);
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.18);
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+
+    z-index: 100;
+}
+
+
+/* Little arrow */
+
+.pronoun::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 4px);
+
+    transform:
+        translateX(-50%)
+        translateY(4px);
+
+    opacity: 0;
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--tooltip-background);
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+
+    z-index: 101;
+}
+
+
+/* Hover */
+
+.pronoun:hover::after,
+.pronoun:hover::before {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
