@@ -10,20 +10,48 @@ const profile = document.getElementById("profile");
 
 function getProfileName() {
 
-    const params = new URLSearchParams(window.location.search);
+    const path =
+        window.location.pathname;
 
-    const name = params.get("id");
 
-    if (!name) {
-        return null;
+    // /f/synph
+
+    const match =
+        path.match(/^\/f\/([^/]+)\/?$/);
+
+    if (match) {
+
+        const name =
+            decodeURIComponent(match[1]);
+
+        if (
+            /^[a-zA-Z0-9_-]+$/.test(name)
+        ) {
+            return name;
+        }
     }
 
-    // Prevent people from using ../ paths
-    if (!/^[a-zA-Z0-9_-]+$/.test(name)) {
-        return null;
+
+    // /profile/?id=synph
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const name =
+        params.get("id");
+
+
+    if (
+        name &&
+        /^[a-zA-Z0-9_-]+$/.test(name)
+    ) {
+        return name;
     }
 
-    return name;
+
+    return null;
 }
 
 
