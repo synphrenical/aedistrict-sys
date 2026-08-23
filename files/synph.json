@@ -1,6 +1,33 @@
 {
   "name": "Synph",
+
   "icon": "https://example.com/synph.png",
+
+  "theme": {
+    "mode": "dark",
+
+    "accent": "#7c3aed",
+
+    "background": "#09090b",
+
+    "surface": "#111113",
+
+    "surfaceSecondary": "#18181b",
+
+    "text": "#f4f4f5",
+
+    "muted": "#a1a1aa",
+
+    "border": "#27272a",
+
+    "backgroundImage": "/assets/backgrounds/synph.jpg",
+
+    "backgroundOpacity": 0.45,
+
+    "backgroundPosition": "center",
+
+    "backgroundSize": "cover"
+  },
 
   "pronouns": [
     {
@@ -13,17 +40,18 @@
     }
   ],
 
-  "description": "A description of Synph goes here.",
+  "aliases": [
+    "Synphrenia",
+    "Caedes"
+  ],
 
-  "sources": [
-    {
-      "name": "Degrees of Lewdity",
-      "url": "https://example.com/source"
-    },
-    {
-      "name": "Original",
-      "url": null
-    }
+  "description": "A description of the profile goes here.",
+
+  "status": "Active",
+
+  "identities": [
+    "Agender",
+    "Androgyne"
   ],
 
   "roles": [
@@ -31,20 +59,59 @@
     "Archivist"
   ],
 
-  "identities": [
-    "Agender",
-    "Androgyne"
+  "terms": [
+    "fellow",
+    "man",
+    "person"
   ],
 
-  "tags": [
-    "introject",
-    "fictive"
+  "sources": [
+    {
+      "name": "Degrees of Lewdity",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Original",
+      "url": null
+    }
   ],
 
   "links": [
     {
       "name": "PluralKit",
       "url": "https://example.com"
+    },
+    {
+      "name": "Reference",
+      "url": "https://example.com"
     }
+  ],
+
+  "flags": [
+    {
+      "name": "Agender",
+      "image": "/assets/flags/agender.png",
+      "url": null
+    }
+  ],
+
+  "information": [
+    {
+      "label": "Species",
+      "value": "Centipede"
+    },
+    {
+      "label": "Height",
+      "value": "6'8\""
+    },
+    {
+      "label": "Type",
+      "value": "Martyr"
+    }
+  ],
+
+  "notes": [
+    "This is a personal interpretation.",
+    "Some information may be outdated."
   ]
 }
